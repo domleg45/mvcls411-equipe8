@@ -1,0 +1,89 @@
+body {
+    background-color: grey;
+}
+
+.center {
+    text-align: center;
+}
+
+.in-line {
+    display: inline-block;
+}
+
+#div-direction {
+    width: 150px;
+    height: auto;
+    background-color: wheat;
+    border: red 5px 5px solid;
+}
+
+#div-direction button{
+    border-radius: 50px;
+    background-color: blueviolet;
+}
+
+#div-media {
+    width: 300px;
+    height: 300px;
+}
+
+#div-media video {
+    width: 150px;
+    height: 150px;
+}
+
+.directional-buttons {
+    width: 16rem;
+    height: 16rem;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 45fr 60fr 45fr;
+    grid-template-rows: 45fr 60fr 45fr;
+    grid-template-areas: "....  up  ....."
+                         "left  ..  right"
+                         ".... down .....";    
+  }
+
+  /* base button */
+  .direction-button {
+    /* the button colours */
+    color: rgb(189, 184, 184);
+    /* since there's no text, we can use the color value for the background */
+    /* clears default button styles */
+    border: none;
+
+  }
+
+  
+  /* when the button is hovered */
+  .direction-button:hover {
+    /* make the button a different color */
+    color: rgb(85,55,55);
+  }
+  
+  /* when the button is pressed */
+  .direction-button:active:after {
+    /* make the inner triangle a different color! */
+    color: rgb(255, 152, 152);
+  }
+  
+  /* individual button styles */
+  .up {
+    grid-area: up;
+    border-radius: 50px;
+  }
+  
+  .left {
+    grid-area: left;
+    border-radius: 50px;
+  }
+  
+  .right {
+    grid-area: right;
+    border-radius: 50px;
+  }
+  
+  .down {
+    grid-area: down;
+    border-radius: 50px;
+  }
