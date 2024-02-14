@@ -1,89 +1,118 @@
 body {
-    background-color: grey;
+  background-color: grey;
+  margin: 0;
 }
 
-.center {
-    text-align: center;
+.nav-main {
+  min-height: 20px;
+  background-color: black;
 }
 
-.in-line {
-    display: inline-block;
+.btn-skip {
+  width: 100px;
 }
 
-#div-direction {
-    width: 150px;
-    height: auto;
-    background-color: wheat;
-    border: red 5px 5px solid;
+.btn-param {
+  width: 100px;
+  height: 70px;
 }
 
-#div-direction button{
-    border-radius: 50px;
-    background-color: blueviolet;
+.flex-container {
+  display: flex;
 }
 
-#div-media {
-    width: 300px;
-    height: 300px;
+.brdRadius {
+  border-radius: 70px;
 }
 
-#div-media video {
-    width: 150px;
-    height: 150px;
+.pddg10 {
+  padding: 10px;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.console-main {
+  background-color: pink;
+  padding: 15px;
+  margin: 35px;
+  border: 5px 5px solid rgb(33, 184, 79);
+  border-radius: 25px;
+  max-width: 80%;
+}
+
+.console-main div {
+  width: auto;
+  height: auto;
+  margin: 10px;
+  background-color: red;
+  max-width: 33%;
+  
+}
+
+.button-style-1 {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+ 
+.button-style-1:hover {
+  background-color: #3e8e41
+}
+ 
+.button-style-1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .directional-buttons {
-    width: 16rem;
-    height: 16rem;
-    display: grid;
-    grid-gap: 0.5rem;
-    grid-template-columns: 45fr 60fr 45fr;
-    grid-template-rows: 45fr 60fr 45fr;
-    grid-template-areas: "....  up  ....."
-                         "left  ..  right"
-                         ".... down .....";    
+  padding: 25px;
+  width: 16rem;
+  height: 16rem;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: 45fr 60fr 45fr;
+  grid-template-rows: 45fr 60fr 45fr;
+  grid-template-areas: "....  up  ....."
+                        "left  ..  right"
+                        ".... down .....";    
   }
 
   /* base button */
-  .direction-button {
-    /* the button colours */
-    color: rgb(189, 184, 184);
-    /* since there's no text, we can use the color value for the background */
-    /* clears default button styles */
-    border: none;
+.direction-button {
+  color: rgb(189, 184, 184);
+  border: none;
+}
 
-  }
+.direction-button:hover {
+  color: rgb(85,55,55);
+}
+  
+.up {
+  grid-area: up;
+}
 
-  
-  /* when the button is hovered */
-  .direction-button:hover {
-    /* make the button a different color */
-    color: rgb(85,55,55);
-  }
-  
-  /* when the button is pressed */
-  .direction-button:active:after {
-    /* make the inner triangle a different color! */
-    color: rgb(255, 152, 152);
-  }
-  
-  /* individual button styles */
-  .up {
-    grid-area: up;
-    border-radius: 50px;
-  }
-  
-  .left {
-    grid-area: left;
-    border-radius: 50px;
-  }
-  
-  .right {
-    grid-area: right;
-    border-radius: 50px;
-  }
-  
-  .down {
-    grid-area: down;
-    border-radius: 50px;
-  }
+.left {
+  grid-area: left;
+}
+
+.right {
+  grid-area: right;
+}
+
+.down {
+  grid-area: down;
+}
