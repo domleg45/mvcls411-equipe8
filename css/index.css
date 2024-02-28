@@ -1,14 +1,36 @@
 @import url("./button.css");
 @import url("./nav.css");
+@import url("./console.css");
+
+html {
+  height: 100%;
+}
 
 body {
-  background-color: grey;
+  background-color: rgb(70, 63, 63);
+  height: 100%;
   margin: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+#root {
+  height: 100%;
 }
 
 .centered {
   margin-left: auto;
   margin-right: auto;
+}
+
+.centered-button-group button {
+  margin: auto;
+}
+
+.red-bg {
+  background-color: rgb(255, 0, 0);
 }
 
 .flex-container {
@@ -31,25 +53,4 @@ body {
   flex-direction: column;
 }
 
-.console-main {
-  background-color: pink;
-  padding: 15px;
-  border: 5px 5px solid rgb(33, 184, 79);
-  border-radius: 25px;
-  max-width: 80%;
-}
-
-.console-main div {
-  width: 33%;
-  height: auto;
-  /* margin: 10px; */
-  background-color: red;
-  max-width: 33%;
-  padding: 15px;
-}
-
-.console-main div div {
-  background-color: wheat;
-  min-width: 93%;
-}
 

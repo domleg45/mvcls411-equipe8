@@ -17,7 +17,6 @@
 
         <div class="console-main flex-container row centered">
             <div>
-
                 <div>
                     <!-- SCREENSHOT -->
                     <button id="capture" onclick="" class="button-style-1"><i class="fa fa-image"></i></button><br>
@@ -26,41 +25,43 @@
                 <!-- CONFIG : MVMYVWXH -->
                 <div class="directional-buttons-div">
 
-                    <!-- VOLUME UP -->
-                    <button class="up brdRadius button-style-1" id="volumeUp"><i class="fa fa-arrow-up"></i></button>
+                    <button class="up brdRadius button-style-1" id=""><i class="fa fa-arrow-up"></i></button>
 
                     <!-- PREVIOUSVIDEO -->
-                    <button class="left brdRadius button-style-1" id=""><i class="fa fa-arrow-left"></i></button>
+                    <button class="left brdRadius button-style-1" id="previousBtn"><i class="fa fa-arrow-left"></i></button>
 
                     <!-- NEXTVIDEO -->
                     <button class="right brdRadius button-style-1" id="nextBtn"><i class="fa fa-arrow-right"></i></button>
 
-                    <!-- VOLUME DOWN -->
-                    <button class="down brdRadius button-style-1" id="volumeDown"><i class="fa fa-arrow-down"></i></button>
+                    <button class="down brdRadius button-style-1" id=""><i class="fa fa-arrow-down"></i></button>
 
                 </div>
             </div>
     
             <div>
-
-                <div class="">
+                <div>
 
                     <!-- PLAY/PAUSE -->
-                    <button id="playBtn" class="button-style-1">
+                    <button id="playBtn" class="button-style-1 red-bg">
                         <i id="playPauseIcon" class="fa fa-play"></i>
                     </button>
 
                 </div>
 
-                <div class="flex-container">
+                <!--VOLUME -->
+                <div class="container">
+                    <input type="range" min="0" max="1" value="0" class="slider" id="volume-slider">
+                </div>
+
+                <div class="flex-container centered-button-group">
 
                     <!-- REWIND -->
-                    <button id="back" class="button-style-1">
+                    <button id="backward" class="button-style-1">
                         <i class="fa fa-backward"></i>
                     </button>
 
                     <!-- ADVANCE -->
-                    <button id="next" class="button-style-1">
+                    <button id="forward" class="button-style-1">
                         <i class="fa fa-forward"></i>
                     </button>
 
@@ -70,15 +71,25 @@
     
             <div class="flex-container col">
                 
-                <!-- PARAM -->
-                <button class="button-style-1" id="">
-                    <i class="fa fa-bars"></i>
-                </button>
+                <div class="flex-container centered-button-group">
 
+                    <!-- MUTE -->
+                    <button class="button-style-1" id="">
+                        <i class="fa fa-volume-off"></i>
+                    </button>
+
+                    <!-- ADD VIDEO -->
+                    <button class="button-style-1" id="add-video">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+        
                 <!-- CONNECT -->
-                <button class="button-style-1" id="connectButton">
-                    <i class="fa fa-check"></i>
-                </button>
+                <div class="">
+                    <button class="button-style-1 red-bg" id="connectButton">
+                        <i class="fa fa-wifi"></i>
+                    </button>
+                </div>
 
             </div>
         </div>
