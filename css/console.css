@@ -1,6 +1,6 @@
 
 .console-main {
-    background-color: rgb(9, 23, 9);
+    background-color: rgb(208, 140, 140);
     padding: 15px;
     border: 5px 5px solid rgb(33, 184, 79);
     border-radius: 25px;
@@ -15,7 +15,7 @@
 }
   
 .console-main div div {
-    background-color: rgb(9, 23, 9);
+    /* background-color: rgb(9, 23, 9); */
     width: auto;
 }
 

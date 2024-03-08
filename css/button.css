@@ -6,7 +6,7 @@
     color: #fff;
     background-color: #12aa04;
     border: none;
-    border-radius: 20px;
+    border-radius: 50%;
     box-shadow: 0 9px #999;
 }
    
@@ -45,5 +45,18 @@
 }
 
 .play {
-    background-color: red;
+    background-color: rgb(255, 0, 0);
+    width: 80px;
+    height: 80px;
+    font-size: 25px;
+    margin-left: 25%;
 }
+
+.connection-Btn {
+    border-radius: 10px;
+    margin-left: 36%;
+}
+
+/* .btn-mrg {
+    margin: 5px;
+} */

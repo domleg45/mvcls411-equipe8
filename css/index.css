@@ -30,7 +30,11 @@ body {
 }
 
 .red-bg {
-  background-color: rgb(255, 0, 0);
+    background-color: red;
+}
+
+.not-implemented {
+  background-color: black;
 }
 
 .flex-container {

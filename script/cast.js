@@ -11,13 +11,48 @@ const videoList = [
     'https://transfertco.ca/video/DBillSpotted.mp4',
     'https://transfertco.ca/video/usa23_7_02.mp4'
 ];
+//https://www.w3schools.com/html/mov_bbb.mp4
 
-const CONNECTION_ERROR = "CONNECTEZ VOUS";
+const CONNECTION_ERROR = "Vous devez connecter la console à un chromecast en premier";
 const SUCCESS = "SUCCESS";
 const ERROR = "ERROR";
 const NOT_YET_IMPLEMENTED = "NOT YET IMPLEMENTED";
 const ON_SUCCESSFUL_MEDIA_LOAD = "Media chargé avec succès";
-const ON_INIT_ERROR = 'Chromecast initialization error';
+const ON_INIT_ERROR = "Erreur d'initialization";
+const UNMUTED_ICON = "fa-volume-low";
+const MUTED_ICON = "fa-volume-xmark";
+const ADD_VIDEO_STRING = "Lien vers une ressource MP4 (exemple : https://transfertco.ca/video/DBillPrelude.mp4): ";
+const onAddVideoError = "Mauvais lien";
+const seekValue = 11;
+
+let captureBtn = document.getElementById("capture");
+let connectButton = document.getElementById('connectButton');
+let nextBtn = document.getElementById('nextBtn');
+let previousBtn = document.getElementById("previousBtn");
+let playBtn = document.getElementById('playBtn');
+let slider = document.getElementById("volume-slider"); slider.step = 0.01;
+let backwardBtn = document.getElementById("backward");
+let forwardBtn = document.getElementById("forward");
+let muteBtn = document.getElementById("muteButton");
+let addVideoButton = document.getElementById("add-video");
+let upBtn = document.getElementById("upBtn");
+let downBtn = document.getElementById("downBtn");
+let volumeIcon = document.getElementById("volumeIcon");
+let playPauseIcon = document.getElementById("playPauseIcon");
+
+let seekBackwardIncator = document.getElementById("seekValueB").innerHTML = "-" + seekValue + "s";
+let seekForwardIndicator = document.getElementById("seekValueF").innerHTML = "+" + seekValue + "s";
+//let volumeLevelIndicator = document.getElementById("volumeLevel").innerHTML = 0;
+
+function volumeIconToMute() {
+    volumeIcon.classList.remove(UNMUTED_ICON);
+    volumeIcon.classList.add(MUTED_ICON);
+}
+
+function volumeIconToUnMute() {
+    volumeIcon.classList.remove(MUTED_ICON);
+    volumeIcon.classList.add(UNMUTED_ICON);
+}
 
 function onError(error) {
     console.error(ON_INIT_ERROR, error);
@@ -30,6 +65,10 @@ function onSuccess() {
 function sessionListener(newSession) {
     currentSession = newSession;
     start();
+}
+
+function connectionError() {
+    alert(CONNECTION_ERROR);
 }
 
 function receiverListener(availability) {
@@ -46,7 +85,6 @@ function initCurrentMediaSession(mediaSession) {
 
 function loadMedia(videoUrl) {
     currentVideoUrl = videoUrl;
-    //specify content type
     const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, defaultContentType);
     const request = new chrome.cast.media.LoadRequest(mediaInfo);
     currentMediaSession = request;
@@ -60,40 +98,37 @@ function start() {
     if (currentSession) {
         loadMedia(videoList[currentVideoIndex]);
     } else {
-        alert(CONNECTION_ERROR);
+        connectionError();
     }
 }
 
 function mute() {
-    const volume = new chrome.cast.Volume(previousVolumeLevel, !currentMediaSession.volume.muted);
-    const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
-    currentMediaSession.setVolume(volumeRequest, onSuccess, onError);
+    if (currentMediaSession) {
+        const volume = new chrome.cast.Volume(previousVolumeLevel, !currentMediaSession.volume.muted);
+        const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
+        currentMediaSession.setVolume(volumeRequest, onSuccess, onError);
+        if (!currentMediaSession.volume.muted) {
+            volumeIconToMute();
+            slider.value = 0;
+        } else {
+            volumeIconToUnMute();
+            slider.value = previousVolumeLevel;
+        }
+    }
 }
 
 function addVideo() {
-    let mp4Url = prompt("mp4 file url : ");
-    if (mp4Url !== "") {
+    let mp4Url = prompt(ADD_VIDEO_STRING);
+    if (mp4Url !== "" && mp4Url.endsWith(".mp4")) {
         videoList.push(mp4Url); 
+    } else {
+        connectionError();
     }
 }
 
 function notYetImplemented() {
     alert(NOT_YET_IMPLEMENTED);
 }
-
-
-let captureBtn = document.getElementById("capture");
-let connectButton = document.getElementById('connectButton');
-let nextBtn = document.getElementById('nextBtn');
-let previousBtn = document.getElementById("previousBtn");
-let playBtn = document.getElementById('playBtn');
-let slider = document.getElementById("volume-slider"); slider.step = 0.01;
-let backwardBtn = document.getElementById("backward");
-let forwardBtn = document.getElementById("forward");
-let muteBtn = document.getElementById("muteButton");
-let addVideoButton = document.getElementById("add-video");
-let upBtn = document.getElementById("upBtn");
-let downBtn = document.getElementById("downBtn");
 
 connectButton.addEventListener('click', () => {
     const sessionRequest = new chrome.cast.SessionRequest(chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID);
@@ -107,31 +142,29 @@ nextBtn.addEventListener('click', () => {
         currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
         loadMedia(videoList[currentVideoIndex]);
     } else {
-        alert(CONNECTION_ERROR);
+        connectionError();
     }
 });
 
 previousBtn.addEventListener('click', () => {
     if (currentSession) {
-        currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
-        
+        currentVideoIndex == 0 ? currentVideoIndex = videoList.length - 1 : currentVideoIndex--;
         loadMedia(videoList[currentVideoIndex]);
     } else {
-        alert(CONNECTION_ERROR);
+        connectionError();
     }
 })
 
 
 playBtn.addEventListener('click', () => {
-    let playPauseIcon = document.getElementById("playPauseIcon");
     if (currentMediaSession) {
         playPauseIcon.classList = [];
-        if (isPlaying) {
-            currentMediaSession.pause(null, onSuccess, onError);
-            playPauseIcon.classList.add("fa", "fa-play");
-        } else {
+        if (!isPlaying) {
             currentMediaSession.play(null, onSuccess, onError);
             playPauseIcon.classList.add("fa", "fa-pause");
+        } else {
+            currentMediaSession.pause(null, onSuccess, onError);
+            playPauseIcon.classList.add("fa", "fa-play");
         }
         isPlaying = !isPlaying;
     }
@@ -147,17 +180,23 @@ slider.oninput = () => {
     }
 }
 
+function seekBy(seconds) {
+    if (currentMediaSession) {
+        let request = new chrome.cast.media.SeekRequest();
+        request.currentTime = currentMediaSession.getEstimatedTime() + seconds;
+        currentMediaSession.seek(request, onSuccess, onError);
+    } else {
+        console.log();
+    }
+}
+
 backwardBtn.addEventListener('click', () => {
-    let request = new chrome.cast.media.SeekRequest();
-    request.currentTime = currentMediaSession.getEstimatedTime() - 10;
-    currentMediaSession.seek(request, onSuccess, onError);
+    seekBy(-seekValue);
 
 })
 
 forwardBtn.addEventListener('click', () => {
-    let request = new chrome.cast.media.SeekRequest();
-    request.currentTime = currentMediaSession.getEstimatedTime() + 10;
-    currentMediaSession.seek(request, onSuccess, onError);
+    seekBy(seekValue);
 })
 
 captureBtn.addEventListener('click', notYetImplemented);
