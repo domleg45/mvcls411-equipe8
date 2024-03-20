@@ -1,11 +1,13 @@
 
 .console-main {
-    background-color: rgb(208, 140, 140);
+
+    background-color: rgba(241, 207, 191, 0.808);
     padding: 15px;
-    border: 5px 5px solid rgb(33, 184, 79);
+    border: 5px 5px solid;
     border-radius: 25px;
     width: 50%;
-    margin-top: 20px;
+    margin-top: 80px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
 .console-main div {
@@ -24,9 +26,14 @@
   appearance: none;
   width: 100%;
   height: 10px; 
-  background: #d4aeae;
+  background: #efe9e2;
   outline: none; 
 }
+
+.slider:hover {
+  background-color: rgb(233, 233, 233);
+}
+
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; 
@@ -34,5 +41,9 @@
   width: 25px; 
   border-radius: 15px;
   height: 25px; 
-  background: #aa4404; 
+  background: #424141; 
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background-color: rgb(23, 22, 22);
 }

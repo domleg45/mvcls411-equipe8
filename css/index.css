@@ -7,9 +7,10 @@ html {
 }
 
 body {
-  background-color: rgb(70, 63, 63);
+  background-color: rgb(216, 168, 144);
   height: 100%;
   margin: 0;
+
 }
 
 .container {
@@ -30,11 +31,11 @@ body {
 }
 
 .red-bg {
-    background-color: red;
+    background-color: rgb(249, 79, 79);
 }
 
-.not-implemented {
-  background-color: black;
+.red-bg:hover {
+  background-color: #ff2828
 }
 
 .flex-container {
