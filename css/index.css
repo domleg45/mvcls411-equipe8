@@ -1,0 +1,60 @@
+@import url("./button.css");
+@import url("./nav.css");
+@import url("./console.css");
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(70, 63, 63);
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered-button-group button {
+  margin: auto;
+}
+
+.red-bg {
+    background-color: red;
+}
+
+.not-implemented {
+  background-color: black;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.brdRadius {
+  border-radius: 70px;
+}
+
+.pddg10 {
+  padding: 10px;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+
+

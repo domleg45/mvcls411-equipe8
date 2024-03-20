@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromecast Sender</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.0.0/shaka-player.compiled.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="root">
+        <nav class="nav-main">
+            <h1>MANETTE</h1>
+        </nav>
+
+        <div class="console-main flex-container row centered">
+            <div>
+                <div>
+                    <!-- SCREENSHOT -->
+                    <button id="capture" onclick="" class="button-style-1 not-implemented"><i class="fa fa-image"></i></button><br>
+                </div>
+    
+                <!-- CONFIG : MVMYVWXH -->
+                <div class="directional-buttons-div">
+
+                    <button class="up brdRadius button-style-1 not-implemented" id="upBtn"><i class="fa fa-arrow-up"></i></button>
+
+                    <!-- PREVIOUSVIDEO -->
+                    <button class="left brdRadius button-style-1" id="previousBtn"><i class="fa fa-arrow-left"></i></button>
+
+                    <!-- NEXTVIDEO -->
+                    <button class="right brdRadius button-style-1" id="nextBtn"><i class="fa fa-arrow-right"></i></button>
+
+                    <button class="down brdRadius button-style-1 not-implemented" id="downBtn"><i class="fa fa-arrow-down"></i></button>
+
+                </div>
+            </div>
+    
+            <div>
+                <div>
+
+                    <!-- PLAY/PAUSE -->
+                    <button id="playBtn" class="button-style-1 play">
+                        <i id="playPauseIcon" class="fa fa-pause"></i>
+                    </button>
+
+                </div>
+
+                <div class="flex-container centered-button-group">
+
+                    <!-- REWIND -->
+                    <button id="backward" class="button-style-1">
+                            <i class="fa fa-backward"></i>
+                            <span id="seekValueB"></span>
+                    </button>
+
+                    <!-- ADVANCE -->
+                    <button id="forward" class="button-style-1">
+                        <i class="fa fa-forward"></i>
+                        <span id="seekValueF"></span>
+                    </button>
+
+                </div>
+
+            </div>
+    
+            <div class="flex-container col">
+                
+                <div class="flex-container centered-button-group">
+                    <!-- ADD VIDEO -->
+                    <button class="button-style-1" id="add-video">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="flex-container">
+                    <!-- MUTE -->
+                    <button class="button-style-1" id="muteButton">
+                        <i class="fa fa-volume-off" id="volumeIcon"></i>
+                    </button>
+    
+                    <!--VOLUME -->           
+                    <div class="container">
+                        <input type="range" min="0" max="1" value="1" class="slider" id="volume-slider">
+                        <!-- <p id="volumeLevel"></p> -->
+                    </div>
+                </div>
+
+                <!-- CONNECT -->
+                <div class="">
+                    <button class="button-style-1 red-bg connection-Btn" id="connectButton">
+                        <i class="fa-brands fa-chromecast"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="./script/cast.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+    </div>
+</body>
+</html>

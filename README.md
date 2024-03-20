@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # INFO
 
 ## Branch tests
@@ -8,3 +9,8 @@
 
 ## Branch maquette
 - Toutes les maquettes (par Nassim)
+=======
+# HTU
+
+
+>>>>>>> origin/dev

@@ -1,0 +1,62 @@
+  
+.button-style-1 {
+    padding: 15px 20px;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    background-color: #12aa04;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 9px #999;
+}
+   
+.button-style-1:hover {
+    background-color: #083704
+}
+   
+.button-style-1:active {
+    background-color: #235ed3;
+    color: white;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+} 
+  
+.directional-buttons-div {
+    display: grid;
+    grid-template-areas: "....  up  ....."
+                          "left  ..  right"
+                          ".... down .....";    
+}
+    
+.up {
+    grid-area: up;
+}
+  
+.left {
+    grid-area: left;
+}
+  
+.right {
+    grid-area: right;
+}
+  
+.down {
+    grid-area: down;
+}
+
+.play {
+    background-color: rgb(255, 0, 0);
+    width: 80px;
+    height: 80px;
+    font-size: 25px;
+    margin-left: 25%;
+}
+
+.connection-Btn {
+    border-radius: 10px;
+    margin-left: 36%;
+}
+
+/* .btn-mrg {
+    margin: 5px;
+} */
