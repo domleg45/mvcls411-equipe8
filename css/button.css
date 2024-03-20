@@ -16,9 +16,9 @@
 }
    
 .button-style-1:active {
-    background-color: #235ed3;
+    background-color: rgba(209, 193, 185, 0.808);
     color: #efe9e2;
-    box-shadow: 0 5px #666;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
     transform: translateY(4px);
 } 
   
@@ -57,6 +57,20 @@
     border-radius: 10px;
     margin-left: 36%;
 }
+
+.screenshot{
+    background-color: rgb(89, 173, 243);
+}
+
+.screenshot:hover{
+    background-color: rgb(43, 143, 225);
+}
+
+.forward{
+
+      
+}
+
 
 /* .btn-mrg {
     margin: 5px;
