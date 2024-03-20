@@ -10,6 +10,8 @@
     box-shadow: 0 9px #999;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
+
+
    
 .button-style-1:hover {
     background-color: #e1d7d1
@@ -26,7 +28,13 @@
         display: grid;
         grid-template-areas: "....  up  ....."
                             "left  ..  right"
-                            ".... down .....";    
+                            ".... down ....."; 
+        
+    }
+
+    .disable{
+        pointer-events: none;
+        opacity: 0.5;
     }
     
 .up {
