@@ -3,23 +3,28 @@
     padding: 15px 20px;
     font-size: 15px;
     text-align: center;
-    color: #fff;
-    background-color: #12aa04;
+    background-color: #235ed3;
+    color: white;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 9px #999;
 }
    
 .button-style-1:hover {
-    background-color: #083704
+    background-color: transparent;
+    transition: 0.3s;
+    color: #235ed3;
+    border: 1px solid #235ed3;
+    
 }
-   
+
 .button-style-1:active {
-    background-color: #235ed3;
+    background-color: #6490e9;
+    border-color: #6490e9;
     color: white;
-    box-shadow: 0 5px #666;
     transform: translateY(4px);
 } 
+
+
   
 .directional-buttons-div {
     display: grid;
@@ -45,11 +50,18 @@
 }
 
 .play {
-    background-color: rgb(255, 0, 0);
+    background-color: transparent;
+    color: #235ed3;
+    border: 1px solid #235ed3;
     width: 80px;
     height: 80px;
     font-size: 25px;
     margin-left: 25%;
+}
+
+.play:hover {
+    background-color: #235ed3;
+    color: white;
 }
 
 .connection-Btn {
