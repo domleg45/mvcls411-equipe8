@@ -7,6 +7,13 @@
     width: 50%;
     margin-top: 20px;
   }
+
+@media (min-width: 1268px) {
+  .console-main {
+    display: flex;
+    flex-direction: row;
+  }
+}
   
 .console-main div {
     width: 33%;
