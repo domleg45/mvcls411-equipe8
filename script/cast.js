@@ -16,7 +16,6 @@ const videoList = [
 const CONNECTION_ERROR = "Vous devez connecter la console à un chromecast en premier";
 const SUCCESS = "SUCCESS";
 const ERROR = "ERROR";
-const NOT_YET_IMPLEMENTED = "NOT YET IMPLEMENTED";
 const ON_SUCCESSFUL_MEDIA_LOAD = "Media chargé avec succès";
 const ON_INIT_ERROR = "Erreur d'initialization";
 const UNMUTED_ICON = "fa-volume-low";
@@ -126,10 +125,6 @@ function addVideo() {
     }
 }
 
-function notYetImplemented() {
-    alert(NOT_YET_IMPLEMENTED);
-}
-
 connectButton.addEventListener('click', () => {
     const sessionRequest = new chrome.cast.SessionRequest(chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID);
     //initCurrentSession
@@ -199,9 +194,6 @@ forwardBtn.addEventListener('click', () => {
     seekBy(seekValue);
 })
 
-captureBtn.addEventListener('click', notYetImplemented);
-upBtn.addEventListener('click', notYetImplemented);
-downBtn.addEventListener('click', notYetImplemented);
 muteBtn.addEventListener('click', mute);
 addVideoButton.addEventListener('click', addVideo);
 // ========================================================================================================

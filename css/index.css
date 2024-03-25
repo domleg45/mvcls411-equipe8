@@ -33,15 +33,6 @@ body {
     background-color: #235ed3;
 }
 
-.not-implemented {
-  background-color: transparent;
-  border: 1px solid rgb(107, 107, 107);
-  color: rgb(114, 113, 113);
-  padding: 15px 20px;
-  font-size: 15px;
-  text-align: center;
-  border-radius: 50%;
-}
 
 .flex-container {
   display: flex;
