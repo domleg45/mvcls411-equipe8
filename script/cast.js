@@ -39,10 +39,14 @@ let upBtn = document.getElementById("upBtn");
 let downBtn = document.getElementById("downBtn");
 let volumeIcon = document.getElementById("volumeIcon");
 let playPauseIcon = document.getElementById("playPauseIcon");
+let helpIcon = document.getElementById("help");
 
 let seekBackwardIncator = document.getElementById("seekValueB").innerHTML = "-" + seekValue + "s";
 let seekForwardIndicator = document.getElementById("seekValueF").innerHTML = "+" + seekValue + "s";
 //let volumeLevelIndicator = document.getElementById("volumeLevel").innerHTML = 0;
+
+
+
 
 function volumeIconToMute() {
     volumeIcon.classList.remove(UNMUTED_ICON);
@@ -130,6 +134,10 @@ function notYetImplemented() {
     alert(NOT_YET_IMPLEMENTED);
 }
 
+function helpMessage(){
+    alert("Voici les étapes pour vous connecter et utiliser le chromcast\n1. Pour se connecter au chromcast, cliquez sur le bouton start au milieu.\n2. Normalement, la vidéo devrait démarrer quelques secondes après votre clique.\n3. Pour changer de vidéo : Cliquez sur les flèches droite ou gauche qui se trouvent à gauche.\n4. Avancer ou reculer la vidéo : Cliquez sur les flèches qui se trouvent en dessous du bouton start\n5. Pour mute : Cliquez sur le bouton mute.")
+}
+
 connectButton.addEventListener('click', () => {
     const sessionRequest = new chrome.cast.SessionRequest(chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID);
     //initCurrentSession
@@ -198,6 +206,8 @@ backwardBtn.addEventListener('click', () => {
 forwardBtn.addEventListener('click', () => {
     seekBy(seekValue);
 })
+
+helpIcon.addEventListener('click', helpMessage)
 
 captureBtn.addEventListener('click', notYetImplemented);
 upBtn.addEventListener('click', notYetImplemented);
