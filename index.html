@@ -19,7 +19,7 @@
             <div>
                 <div>
                     <!-- SCREENSHOT -->
-                    <button id="capture" onclick="" class="button-style-1 not-implemented"><i class="fa fa-image"></i></button><br>
+                    <button id="capture" onclick="" class="button-style-1 not-implemented "><i class="fa fa-image"></i></button><br>
                 </div>
     
                 <!-- CONFIG : MVMYVWXH -->
@@ -39,14 +39,14 @@
             </div>
     
             <div>
-                <div>
 
-                    <!-- PLAY/PAUSE -->
-                    <button id="playBtn" class="button-style-1 play">
-                        <i id="playPauseIcon" class="fa fa-pause"></i>
+                 <!-- CONNECT -->
+                 <div class="">
+                    <button class="boutonConnect" id="connectButton">
+                        <i class="fa-brands fa-chromecast"></i>
                     </button>
-
                 </div>
+                
 
                 <div class="flex-container centered-button-group">
 
@@ -55,6 +55,14 @@
                             <i class="fa fa-backward"></i>
                             <span id="seekValueB"></span>
                     </button>
+                    <div>
+
+                        <!-- PLAY/PAUSE -->
+                        <button id="playBtn" class="button-style-1 play">
+                            <i id="playPauseIcon" class="fa fa-pause"></i>
+                        </button>
+    
+                    </div>
 
                     <!-- ADVANCE -->
                     <button id="forward" class="button-style-1">
@@ -77,22 +85,19 @@
 
                 <div class="flex-container">
                     <!-- MUTE -->
+                    <div class="container">
                     <button class="button-style-1" id="muteButton">
                         <i class="fa fa-volume-off" id="volumeIcon"></i>
                     </button>
-    
+                    </div>
+
+                  
                     <!--VOLUME -->           
                     <div class="container">
+                        <div class="">volume-slider</div>
                         <input type="range" min="0" max="1" value="1" class="slider" id="volume-slider">
                         <!-- <p id="volumeLevel"></p> -->
                     </div>
-                </div>
-
-                <!-- CONNECT -->
-                <div class="">
-                    <button class="button-style-1 red-bg connection-Btn" id="connectButton">
-                        <i class="fa-brands fa-chromecast"></i>
-                    </button>
                 </div>
 
             </div>

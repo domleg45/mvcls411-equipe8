@@ -4,7 +4,7 @@
     font-size: 15px;
     text-align: center;
     color: #fff;
-    background-color: #12aa04;
+    background-color: #008000;
     border: none;
     border-radius: 50%;
     box-shadow: 0 9px #999;
@@ -45,7 +45,7 @@
 }
 
 .play {
-    background-color: rgb(255, 0, 0);
+    background-color:#12aa04;
     width: 80px;
     height: 80px;
     font-size: 25px;
@@ -55,6 +55,17 @@
 .connection-Btn {
     border-radius: 10px;
     margin-left: 36%;
+}
+
+.boutonConnect {
+    padding: 30px 40px;
+    font-size: 15px;
+    margin-left: 70px;
+    color: #fff;
+    background-color: blue;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 9px #999;
 }
 
 /* .btn-mrg {
