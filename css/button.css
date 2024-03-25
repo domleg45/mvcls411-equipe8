@@ -7,19 +7,78 @@
     background-color: #12aa04;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 9px #999;
+    /* Couleur du bas des boutons */
+    box-shadow: 0 9px #3aa7da;
+
 }
-   
+  
+
+#previousBtn{
+    background-color: aqua;
+    color: rgb(129, 127, 255);
+}
+
+
+#nextBtn{
+    background-color: aqua;
+    color: rgb(129, 127, 255);  
+}
+
+/* Bouton d'avancement */
+
+#backward{
+    background-color: rgb(15, 66, 235);
+    color: rgb(234, 234, 240);  
+
+}
+#forward{
+    background-color: rgb(15, 66, 235);
+    color: rgb(234, 234, 240); 
+}
+
+#add-video{
+    font-size: 20px;
+    background-color: rgb(15, 235, 33);
+    color: rgb(234, 234, 240);   
+}
+
+
+#root{
+    background-color: rgb(113, 220, 235);
+}
+
+.nav-main{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 3cap;
+    text-align: center;
+    background-color: aqua;
+}
+
+#connectButton{
+    background-color: #fff;
+    color: red;
+}
+/* Size des  */
+i{
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ********************************* */
+
 .button-style-1:hover {
     background-color: #083704
 }
    
-.button-style-1:active {
-    background-color: #235ed3;
-    color: white;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-} 
+
   
 .directional-buttons-div {
     display: grid;
@@ -45,7 +104,7 @@
 }
 
 .play {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(241, 7, 7);
     width: 80px;
     height: 80px;
     font-size: 25px;
