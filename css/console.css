@@ -1,6 +1,6 @@
 
 .console-main {
-    background-color: rgb(208, 140, 140);
+    background-color:white;
     padding: 15px;
     border: 5px 5px solid rgb(33, 184, 79);
     border-radius: 25px;
@@ -24,7 +24,7 @@
   appearance: none;
   width: 100%;
   height: 10px; 
-  background: #d4aeae;
+  background: black;
   outline: none; 
 }
 
@@ -34,5 +34,5 @@
   width: 25px; 
   border-radius: 15px;
   height: 25px; 
-  background: #aa4404; 
+  background: black; 
 }

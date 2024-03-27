@@ -16,7 +16,6 @@ const videoList = [
 const CONNECTION_ERROR = "Vous devez connecter la console à un chromecast en premier";
 const SUCCESS = "SUCCESS";
 const ERROR = "ERROR";
-const NOT_YET_IMPLEMENTED = "NOT YET IMPLEMENTED";
 const ON_SUCCESSFUL_MEDIA_LOAD = "Media chargé avec succès";
 const ON_INIT_ERROR = "Erreur d'initialization";
 const UNMUTED_ICON = "fa-volume-low";
@@ -24,6 +23,7 @@ const MUTED_ICON = "fa-volume-xmark";
 const ADD_VIDEO_STRING = "Lien vers une ressource MP4 (exemple : https://transfertco.ca/video/DBillPrelude.mp4): ";
 const onAddVideoError = "Mauvais lien";
 const seekValue = 11;
+const help = "Voici les étapes pour vous connecter et utiliser le chromcast\n1. Pour se connecter au chromcast, cliquez sur le bouton start au milieu.\n2. Normalement, la vidéo devrait démarrer quelques secondes après votre clique.\n3. Pour changer de vidéo : Cliquez sur les flèches droite ou gauche qui se trouvent à gauche.\n4. Avancer ou reculer la vidéo : Cliquez sur les flèches qui se trouvent en dessous du bouton start\n5. Pour mute : Cliquez sur le bouton mute."
 
 let captureBtn = document.getElementById("capture");
 let connectButton = document.getElementById('connectButton');
@@ -75,13 +75,13 @@ function connectionError() {
     alert(CONNECTION_ERROR);
 }
 
-function receiverListener(availability) {
-    if (availability === chrome.cast.ReceiverAvailability.AVAILABLE) {
+/**function receiverListener(availability) {
+    /**if (availability === chrome.cast.ReceiverAvailability.AVAILABLE) {
         document.getElementById('connectButton').style.display = 'block';
-    } else {
+    } //else {
         document.getElementById('connectButton').style.display = 'none';
     }
-}
+}*/
 
 function initCurrentMediaSession(mediaSession) {
     currentMediaSession = mediaSession;
@@ -130,14 +130,9 @@ function addVideo() {
     }
 }
 
-function notYetImplemented() {
-    alert(NOT_YET_IMPLEMENTED);
-}
-
 function helpMessage(){
-    alert("Voici les étapes pour vous connecter et utiliser le chromcast\n1. Pour se connecter au chromcast, cliquez sur le bouton start au milieu.\n2. Normalement, la vidéo devrait démarrer quelques secondes après votre clique.\n3. Pour changer de vidéo : Cliquez sur les flèches droite ou gauche qui se trouvent à gauche.\n4. Avancer ou reculer la vidéo : Cliquez sur les flèches qui se trouvent en dessous du bouton start\n5. Pour mute : Cliquez sur le bouton mute.")
+    alert(help)
 }
-
 connectButton.addEventListener('click', () => {
     const sessionRequest = new chrome.cast.SessionRequest(chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID);
     //initCurrentSession
@@ -208,12 +203,6 @@ forwardBtn.addEventListener('click', () => {
 })
 
 helpIcon.addEventListener('click', helpMessage)
-
-captureBtn.addEventListener('click', notYetImplemented);
-upBtn.addEventListener('click', notYetImplemented);
-downBtn.addEventListener('click', notYetImplemented);
-muteBtn.addEventListener('click', mute);
-addVideoButton.addEventListener('click', addVideo);
 // ========================================================================================================
 
 

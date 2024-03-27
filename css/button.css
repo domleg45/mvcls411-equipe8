@@ -4,14 +4,13 @@
     font-size: 15px;
     text-align: center;
     color: #fff;
-    background-color: #12aa04;
+    background-color: black;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 9px #999;
 }
    
 .button-style-1:hover {
-    background-color: #083704
+    background-color: #9FA1A2;
 }
    
 .button-style-1:active {
@@ -45,14 +44,16 @@
 }
 
 .play {
-    background-color: rgb(255, 0, 0);
-    width: 80px;
-    height: 80px;
+    background-color: black;
+    width: 110px;
+    height: 110px;
     font-size: 25px;
     margin-left: 25%;
 }
 
 .connection-Btn {
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
     margin-left: 36%;
 }
