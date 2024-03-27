@@ -1,11 +1,13 @@
 
 .console-main {
 
+    display: flex;
+    flex-direction: row;
     background-color: rgba(241, 207, 191, 0.808);
-    padding: 15px;
+    padding: 40px;
     border: 5px 5px solid;
     border-radius: 25px;
-    width: 50%;
+    width: 60%;
     margin-top: 80px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
@@ -13,7 +15,6 @@
 .console-main div {
     width: 33%;
     height: auto;
-    padding: 15px;
 }
   
 .console-main div div {
@@ -21,14 +22,14 @@
     width: auto;
 }
 
-.slider {
-  -webkit-appearance: none;  
-  appearance: none;
-  width: 100%;
-  height: 10px; 
-  background: #efe9e2;
-  outline: none; 
-}
+  .slider {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 100%;
+    height: 10px; 
+    background: #efe9e2;
+    outline: none; 
+  }
 
 .slider:hover {
   background-color: rgb(233, 233, 233);

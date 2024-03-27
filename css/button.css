@@ -14,7 +14,7 @@
 
    
 .button-style-1:hover {
-    background-color: #e1d7d1
+    background-color: #e8d9cfc4
 }
    
 .button-style-1:active {
@@ -27,7 +27,7 @@
     .directional-buttons-div {
         display: grid;
         grid-template-areas: "....  up  ....."
-                            "left  ..  right"
+                            "left  ...  right"
                             ".... down ....."; 
         
     }
@@ -36,17 +36,31 @@
         pointer-events: none;
         opacity: 0.5;
     }
+
+    .otherColor{
+        background-color: rgba(245, 227, 211, 0.819);
+    }
     
 .up {
     grid-area: up;
 }
   
 .left {
+    
     grid-area: left;
+    background-color: rgb(251, 238, 225);
+ 
 }
   
 .right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     grid-area: right;
+    padding: 20px;
+    background-color:  rgb(251, 238, 225);
+  
 }
   
 .down {
@@ -54,11 +68,23 @@
 }
 
 .play {
-    background-color: #efe9e2;
     width: 80px;
     height: 80px;
     font-size: 25px;
-    margin-left: 25%;
+    margin: auto;
+    background-color: rgba(253, 249, 245, 0.853);
+}
+
+.play:hover{
+    background-color:
+    rgba(238, 233, 229, 0.853);
+}
+
+.play:active{
+    background-color: rgba(209, 193, 185, 0.808);
+    color: #efe9e2;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(4px);
 }
 
 .connection-Btn {
@@ -66,18 +92,29 @@
     margin-left: 36%;
 }
 
-.screenshot{
-    background-color: rgb(89, 173, 243);
+
+#seekValueF{
+    padding: 4px;
+    
 }
 
-.screenshot:hover{
-    background-color: rgb(43, 143, 225);
+#seekValueB{
+    padding: 5px;
+  
 }
 
-.forward{
-
-      
+#forward{
+    padding: 18px;
+    
 }
+
+#backward{
+    padding: 18px;
+
+}
+
+
+
 
 
 /* .btn-mrg {
