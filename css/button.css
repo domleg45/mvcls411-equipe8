@@ -68,6 +68,30 @@
     box-shadow: 0 9px #999;
 }
 
+.forward{
+
+    padding: 15px 20px;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    background-color: #1F51FF;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 9px #999;
+
+}
+
+.backward {
+    padding: 15px 20px;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    background-color: #AA4A44;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 9px #999;
+}
+
 /* .btn-mrg {
     margin: 5px;
 } */

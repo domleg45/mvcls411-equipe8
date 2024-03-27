@@ -162,9 +162,11 @@ playBtn.addEventListener('click', () => {
         if (!isPlaying) {
             currentMediaSession.play(null, onSuccess, onError);
             playPauseIcon.classList.add("fa", "fa-pause");
+            playPauseIcon.style.innerHTML="#50C878";
         } else {
             currentMediaSession.pause(null, onSuccess, onError);
             playPauseIcon.classList.add("fa", "fa-play");
+            playPauseIcon.style.innerHTML="#FF0000";
         }
         isPlaying = !isPlaying;
     }
